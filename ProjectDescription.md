@@ -1,27 +1,17 @@
 # PROJECT
-Arkadaşlar projemiz; üçüncü ödevden itibaren geliştirdiğimiz bankacılık sistemini bazı eklemelerle daha detaylı ve düzgün bir şekilde geliştirmek olacaktır. Burada tanımları daha kısa tutacağım(Kod örnekleri olmayacak).
+
 
 ## TEKNOLOJİLER
 - Java
 - Spring Boot
-- MyBatis (JDBC veya SPRING DATA JDBC kullanmayacağız, MyBatis zorunlu)
+- MyBatis
 - Kafka
-- Spring Security(Custom User Details Service vb...)
+- Spring Security
 - MySQL
 - Log4J
 - Collect API
-- Angular JS (Frontend)
+- Angular JS
 
-### FRONTEND
-
-Arkadaşlar projenin frontendi olacaktır ve bu frontend Angular.js ile geliştirilecektir. Burada frontend'de
-- Login Sayfası
-- Register Sayfası
-- Profil Sayfası, başarılı login sonrası bu sayfa açılacaktır. (Profil Sayfasında iki tane button olacak hesaplarım ve para transferi yap şeklinde)
-	- Hesaplarım sayfasında hesaplara dair bilgiler gözükecektir. (<table> kullanabilirsiniz)
-	- Para transferi sayfasında paranın çıkacağı kendi hesabınızı, paranın transfer olacağı diğer hesabı ve miktarı girebileceğiz bir form olacak. Daha sonra transfer diye bir buton işlemi yerine getirecektir. (textfield ve button kullanabilirsiniz). Yani kendi hesap numaranızı, diğer hesabın hesap numarasını ve miktarı yazıp transfer webservisinizi çağıracaksınız.
-
-Projemizde önemli kısım backend'dir. Ağırlık olarak backend %90 ağırlıktadır. 
 
 ## ENTITIES
 
