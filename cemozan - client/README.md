@@ -1,7 +1,10 @@
 ## TO RUN
 
-1- npm install
-2- npm start / ng serve
+```
+    1- npm install
+    2- npm start / ng serve
+    
+```
 
 Server will run on localhost:4200
 
