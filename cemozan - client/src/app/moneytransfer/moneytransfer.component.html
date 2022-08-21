@@ -1,0 +1,74 @@
+<div class="col-md-12">
+  <div class="card card-container">
+    <form
+      name="form"
+      (ngSubmit)="onSubmit()"
+      #f="ngForm"
+      novalidate
+    >
+      <div class="form-group">
+        <label for="id">Transferred Account Number</label>
+        <input
+          type="text"
+          class="form-control"
+          name="transferredAccountNumber"
+          [(ngModel)]="form.transferredAccountNumber"
+          required
+          #username="ngModel"
+        />
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="username.errors && f.submitted"
+        >
+        Transferred Account Number is required!
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="id">From Account Number</label>
+        <input
+          type="text"
+          class="form-control"
+          name="fromAccountNumber"
+          [(ngModel)]="form.fromAccountNumber"
+          required
+          #username="ngModel"
+        />
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="username.errors && f.submitted"
+        >
+        From Account Number is required!
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="id">Amount</label>
+        <input
+          type="text"
+          class="form-control"
+          name="amount"
+          [(ngModel)]="form.amount"
+          required
+          #username="ngModel"
+        />
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="username.errors && f.submitted"
+        >
+        Amount is required!
+        </div>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary btn-block">
+          Submit
+        </button>
+      </div>
+    </form>
+
+  </div>
+  <div *ngIf="isTransferSuccessful">
+    <h1>Transferred Succesfully</h1>
+  </div>
+</div>

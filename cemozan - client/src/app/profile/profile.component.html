@@ -1,0 +1,77 @@
+<div class="col-md-12">
+    <div class="card card-container">
+      <form
+        name="form"
+        (ngSubmit)="onSubmit()"
+        #f="ngForm"
+        novalidate
+      >
+        <!-- <div class="form-group">
+          <label for="id">User id</label>
+          <input
+            type="text"
+            class="form-control"
+            name="id"
+            [(ngModel)]="form.id"
+            required
+            #username="ngModel"
+          />
+          <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="username.errors && f.submitted"
+          >
+            user id is required!
+          </div>
+        </div> -->
+        <div class="form-group">
+          <button class="btn btn-primary btn-block">
+            Get My Accounts
+          </button>
+        </div>
+      </form>
+      <table *ngIf="isDataReceived" class="table table-bordered text-center">
+        <tr>
+          <th class="text-center">Id</th>
+          <th class="text-center">Account Number</th>
+          <th class="text-center">Balance</th>
+          <th class="text-center">Last Modified</th>
+          <th class="text-center">Type</th>
+          <th class="text-center">User Id</th>
+          <th class="text-center">Bank Id</th>
+          <th class="text-center">Creation Date Id</th>
+        </tr>
+        <ng-container *ngFor="let data of centroData; let id = index">
+          <tr>
+          <td>
+            <span>{{data.id}}</span>
+          </td>
+          <td>
+            <span>{{data.accountNumber}}</span>
+          </td>
+          <td>
+            <span>{{data.balance}}</span>
+          </td>
+          <td>
+            <span>{{data.lastModified}}</span>
+          </td>
+          <td>
+            <span>{{data.type}}</span>
+          </td>
+          <td>
+            <span>{{data.userId}}</span>
+          </td>
+          <td>
+            <span>{{data.bankId}}</span>
+          </td>
+          <td>
+            <span>{{data.creationDate}}</span>
+          </td>
+        </tr>
+
+        </ng-container>
+      
+        </table>
+    </div>
+  </div>
+  

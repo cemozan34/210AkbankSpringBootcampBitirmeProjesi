@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace = "banksMapper">
+	<select id="getAll" resultType="com.example.cemozan.bankingsystemproject.Models.Bank">
+		SELECT * FROM banks
+	</select>
+	<select id="findByBankName" resultType="com.example.cemozan.bankingsystemproject.Models.Bank">
+		    SELECT * FROM banks WHERE name = #{name}
+	</select>
+	<insert id="createBank" parameterType="com.example.cemozan.bankingsystemproject.Models.Bank" useGeneratedKeys="true">
+		INSERT INTO banks (name) VALUES(#{name})
+	</insert>
+</mapper>
+

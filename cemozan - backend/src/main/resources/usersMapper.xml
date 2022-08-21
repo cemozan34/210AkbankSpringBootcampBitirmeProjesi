@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace = "usersMapper">
+	<select id="getAll" resultType="com.example.cemozan.bankingsystemproject.Models.User">
+		SELECT * FROM users
+	</select>
+	<select id="findByUsername" resultType="com.example.cemozan.bankingsystemproject.Models.User">
+		    SELECT * FROM users WHERE username = #{username}
+	</select>
+	<insert id="registerUser" parameterType="com.example.cemozan.bankingsystemproject.Models.User" useGeneratedKeys="true">
+		INSERT INTO users (username,password,authorities,email) VALUES(#{username},#{password},#{authorities},#{email})
+	</insert>
+	
+	<select id="findByEmail" resultType="com.example.cemozan.bankingsystemproject.Models.User">
+		    SELECT * FROM users WHERE email = #{email}
+	</select>
+	
+	<select id="findById" resultType="com.example.cemozan.bankingsystemproject.Models.User">
+		    SELECT * FROM users WHERE id = #{id}
+	</select>
+	<update id="updateUserEnabled" parameterType="com.example.cemozan.bankingsystemproject.Models.User">
+		    UPDATE users SET enabled = #{enabled} WHERE id = #{id}
+	</update>
+</mapper>
+

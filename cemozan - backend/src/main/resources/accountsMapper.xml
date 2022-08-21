@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace = "accountsMapper">
+	<resultMap type="com.example.cemozan.bankingsystemproject.Models.Account" id="accountsResultMap">
+		<result column="last_modified" property="lastModified"/>
+		<result column="creation_date" property="creationDate"/>
+		<result column="bank_id" property="bankId"/>
+		<result column="user_id" property="userId"/>
+		<result column="account_number" property="accountNumber"/>
+		<result column="is_deleted " property="isDeleted"/>
+    </resultMap>
+	<select id="getAll" resultType="com.example.cemozan.bankingsystemproject.Models.Account">
+		SELECT * FROM accounts
+	</select>
+	<select id="findByAccountNumber" resultMap="accountsResultMap">
+		    SELECT * FROM accounts WHERE account_number = #{accountNumber}
+	</select>
+	
+	<update id="updateBalanceByAccountNumber" parameterType="com.example.cemozan.bankingsystemproject.Models.Account">
+		UPDATE accounts SET balance = #{newBalance} WHERE account_number = #{accountNumber}
+	</update>
+	
+	<insert id="createAccount" parameterType="com.example.cemozan.bankingsystemproject.Models.Account" useGeneratedKeys="true" >
+		INSERT INTO accounts (bank_id,type,balance,user_id,creation_date, last_modified,is_deleted,account_number) VALUES(#{bankId},#{type},#{balance},#{userId},#{creationDate},#{lastModified},#{isDeleted},#{accountNumber})
+	</insert>
+	
+	<update id="deleteAccount" parameterType="com.example.cemozan.bankingsystemproject.Models.Account">
+		UPDATE accounts SET is_deleted = 1 WHERE account_number = #{accountNumber}
+	</update>
+	
+	<update id="updateLastModified" parameterType="com.example.cemozan.bankingsystemproject.Models.Account">
+		UPDATE accounts SET last_modified = #{lastModified} WHERE account_number = #{accountNumber}
+	</update>
+	
+	<update id="updateBalance" parameterType="com.example.cemozan.bankingsystemproject.Models.Account">
+		UPDATE accounts SET balance = #{balance} WHERE account_number = #{accountNumber}
+	</update>
+	
+	<select id="findAllAccountsByUserId" resultMap="accountsResultMap">
+		    SELECT * FROM accounts WHERE user_id = #{userId}
+	</select>
+	
+</mapper>
+

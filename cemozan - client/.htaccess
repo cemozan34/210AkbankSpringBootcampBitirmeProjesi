@@ -1,0 +1,18 @@
+# ------------------------------------------------------------------------------
+# | Cross-domain Ajax requests                                                 |
+# ------------------------------------------------------------------------------
+
+# Enable cross-origin Ajax requests.
+# http://code.google.com/p/html5security/wiki/CrossOriginRequestSecurity
+# http://enable-cors.org/
+
+# <IfModule mod_headers.c>
+#    Header set Access-Control-Allow-Origin "*"
+# </IfModule>
+
+# Header set Header set Access-Control-Allow-Origin "*"
+# Header always set Access-Control-Allow-Credentials "true"
+
+Access-Control-Allow-Origin "http://localhost:8080"
+Header always set Access-Control-Allow-Methods "POST, GET, OPTIONS, DELETE, PUT"
+# Header always set Access-Control-Allow-Headers "My-First-Header,My-Second-Header,Authorization, content-type, csrf-token"
